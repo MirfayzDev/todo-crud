@@ -1,0 +1,126 @@
+.backdrop {
+    position: fixed;
+    height: 100%;
+    width: 100% ;
+    background-color: rgba(0, 0 , 0, 0.3);
+    z-index: 99;
+    transition: all .3s ease-in;
+}
+    
+.container, .deleteModalContainer {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3.2rem 2.4rem;
+    background-color: #E2E8F0;
+    border-radius: .8rem;
+    /*height: 100%;*/
+    z-index: 1000;
+    transition: all .3s ease-in;
+}
+
+.deleteModalContainer {
+    width: 40%;
+}
+
+.btn-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.cancelBtn {
+    background-color: transparent;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
+    font-weight: 300;
+}
+
+.confirmBtn {
+    padding: 1.2rem 2.4rem;
+    outline: none;
+    line-height: 2.4rem;
+    font-size: 1.6rem;
+    border-radius: .8rem;
+    color: #F8FAFC;
+    background-color: #7C3AED;
+    transition: ease-in .15s;
+    cursor: pointer;
+}
+
+.btn:hover, .btn:active {
+    background-color: #6D28D9;
+}
+
+.dark {
+    background-color: #0F172A;
+    color: #64748B;
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+}
+
+.dark .title-wrapper {
+    color: #E2E8F0;
+}
+
+.close-btn {
+    background-color: transparent;
+    width: 2.4rem;
+    color: #475569;
+    cursor: pointer;
+}
+
+.dark .close-btn {
+    color: #E2E8F0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.form-label {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-control {
+    width: 100%;
+    background-color: #F1F5F9;
+    color: inherit;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: .8rem;
+    font-size: inherit;
+    padding: 1.2rem 1.6rem;
+    transition: .1s;
+}
+
+.dark .form-control {
+    background-color: #141E33;
+}
+
+.form-control:hover, .form-control:focus {
+    border: 2px solid #6D28D9;
+    color: #475569;
+}
+
+.dark .form-control:hover, .dark .form-control:focus {
+    color: #94A3B8;
+}
+
+::placeholder {
+    font-size: 1.6rem;
+    color: #475569;
+}

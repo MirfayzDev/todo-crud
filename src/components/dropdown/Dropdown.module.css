@@ -1,0 +1,46 @@
+.container {
+    margin-top: 3.2rem;
+    margin-left: 1.6rem;
+}
+
+.btn {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: inherit;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.icon {
+    fill: #475569;
+    width: 1.4rem;
+}
+
+.iconClosed {
+    transform: rotate(90deg);
+}
+
+.iconOpened {
+    transform: rotate(180deg);
+}
+
+.dropdown-list li, .new {
+    display: block;
+    text-align: left;
+    font-size: 1.8rem;
+    padding: .8rem 1.6rem;
+}
+
+.new {
+    color: inherit;
+    border: 1px dashed #94A39A;
+    border-radius: .6rem;
+    background-color: transparent;
+    margin-left: 1.2rem;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    font-size: inherit;
+}

@@ -1,0 +1,129 @@
+.container, .row {
+    border-radius: .8rem;
+    background-color: #F1F5F9;
+    padding: 1.6rem;
+    transition: all .3s ease-in;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark {
+    background-color: #141E33;
+    color: #94A3B8;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+}
+
+.dark .title {
+    color: #E2E8F0;
+}
+
+.description, .date {
+    margin-top: 1.6rem;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 6.4rem;
+}
+
+.row .date {
+    margin-top: 3.2rem;
+}
+
+.date svg {
+    width: 1.8rem;
+}
+
+.btns-wrapper {
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
+    border-top: 2px dashed #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row .btns-wrapper {
+    margin: 0;
+    padding: 0;
+    gap: 1.6rem;
+    border: none;
+}
+
+.dark .btns-wrapper {
+    border-top: 2px dashed #64748B;
+}
+
+.statusBtn {
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 100rem;
+    font-size: 1.6rem;
+    padding: .8rem 1.6rem;
+}
+
+.uncompleted {
+    background-color: #FDE68A;
+    color: #BB5D0E;
+}
+
+.completed {
+    background-color: #A7F3D0;
+    color: #065F46;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.markIcon, .deleteIcon {
+    width: 2.4rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.editIcon {
+    width: .5rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.markIcon svg {
+    fill: transparent;
+    stroke: #475569;
+}
+
+.important svg {
+    fill: #F43F5E;
+    stroke: #F43F5E;
+}
+
+.dark .markIcon svg {
+    stroke: #E2E8F0;
+}
+
+.dark .important svg {
+    stroke: #F43F5E;
+}
+
+.deleteIcon svg, .editIcon svg {
+    fill: #475569;
+}
+
+.dark .deleteIcon svg, .dark .editIcon svg {
+    fill: #E2E8F0;
+}

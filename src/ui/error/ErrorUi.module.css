@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 3.2rem;
+    color: red;
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    font-size: 2.4rem;
+}
+
+.btn a, .btn a:active {
+    color: #475569;
+}
