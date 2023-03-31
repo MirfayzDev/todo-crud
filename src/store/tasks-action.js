@@ -1,10 +1,12 @@
 import {tasksAction} from "./tasks-slice";
 import {toast} from "react-toastify";
 
+const url = 'https://todo-crud-62b33-default-rtdb.firebaseio.com'
+
 export const PostTask = (tasks) => {
     return async () => {
         const sendRequest = async () => {
-            const response = await fetch('https://todo-db6ab-default-rtdb.firebaseio.com/tasks.json', {
+            const response = await fetch(`${url}/tasks.json`, {
                 method: 'POST',
                 body: JSON.stringify({
                     title: tasks.title,
@@ -19,7 +21,7 @@ export const PostTask = (tasks) => {
 
             const id = (await response.json()).name
 
-            await fetch(`https://todo-db6ab-default-rtdb.firebaseio.com/tasks/${id}.json`, {
+            await fetch(`${url}/tasks/${id}.json`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     id, ...tasks
@@ -40,7 +42,7 @@ export const PostTask = (tasks) => {
 export const PostDirectory = (directories) => {
     return async () => {
         const sendRequest = async () => {
-            const response = await fetch('https://todo-db6ab-default-rtdb.firebaseio.com/directories.json', {
+            const response = await fetch(`${url}/directories.json`, {
                 method: 'POST',
                 body: JSON.stringify(directories)
             })
@@ -51,7 +53,7 @@ export const PostDirectory = (directories) => {
 
             const id = (await response.json()).name
 
-            await fetch(`https://todo-db6ab-default-rtdb.firebaseio.com/directories/${id}.json`, {
+            await fetch(`${url}/directories/${id}.json`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     id, ...directories
@@ -72,7 +74,7 @@ export const PostDirectory = (directories) => {
 export const GetTask = () => {
     return async dispatch => {
         const sendRequest = async () => {
-            const response = await fetch('https://todo-db6ab-default-rtdb.firebaseio.com/tasks.json')
+            const response = await fetch(`${url}/tasks.json`)
 
             if (!response.ok) {
                 throw new Error('Fetching failed!')
@@ -95,7 +97,7 @@ export const GetTask = () => {
 export const GetDirectory = () => {
     return async dispatch => {
         const sendRequest = async () => {
-            const response = await fetch('https://todo-db6ab-default-rtdb.firebaseio.com/directories.json')
+            const response = await fetch(`${url}/directories.json`)
 
             if (!response.ok) {
                 throw new Error('Fetching failed!')
@@ -118,7 +120,7 @@ export const GetDirectory = () => {
 export const EditTask = (task) => {
     return async dispatch => {
         const sendRequest = async () => {
-            const response = await fetch( `https://todo-db6ab-default-rtdb.firebaseio.com/tasks/${task.id}.json`,{
+            const response = await fetch( `${url}/tasks/${task.id}.json`,{
                 method: 'PATCH',
                 body: JSON.stringify(task)
             })
@@ -142,7 +144,7 @@ export const EditTask = (task) => {
 export const DeleteTask = (task) => {
     return async dispatch => {
         const sendRequest = async () => {
-            const response = await fetch(`https://todo-db6ab-default-rtdb.firebaseio.com/tasks/${task.id}.json`, {
+            const response = await fetch(`${url}/tasks/${task.id}.json`, {
                 method: 'DELETE',
             })
 
@@ -165,7 +167,7 @@ export const DeleteTask = (task) => {
 export const ToggleCompleteTask = (task) => {
     return async () => {
         const sendRequest = async () => {
-            const response = await fetch( `https://todo-db6ab-default-rtdb.firebaseio.com/tasks/${task.id}.json`,{
+            const response = await fetch( `${url}/tasks/${task.id}.json`,{
                 method: 'PATCH',
                 body: JSON.stringify({...task, completed: !task.completed})
             })
@@ -188,7 +190,7 @@ export const ToggleCompleteTask = (task) => {
 export const ToggleImportantTask = (task) => {
     return async () => {
         const sendRequest = async () => {
-            const response = await fetch( `https://todo-db6ab-default-rtdb.firebaseio.com/tasks/${task.id}.json`,{
+            const response = await fetch( `${url}/tasks/${task.id}.json`,{
                 method: 'PATCH',
                 body: JSON.stringify({...task, important: !task.important})
             })
